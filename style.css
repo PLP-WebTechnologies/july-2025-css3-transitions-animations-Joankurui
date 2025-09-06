@@ -1,0 +1,68 @@
+/* ================= General Page Styling ================= */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+/* ================= Part 1: CSS3 Transitions and Animations ================= */
+
+/* Button with transition effects */
+.hover-btn {
+  background: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  /* transition properties: smooth background and scale */
+  transition: background 0.5s, transform 0.3s;
+}
+
+.hover-btn:hover {
+  background: #2ecc71;  /* background changes to green */
+  transform: scale(1.1); /* button grows slightly */
+}
+
+/* A box that pulses continuously using @keyframes */
+.pulse-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: tomato;
+  animation: pulse 2s infinite; /* animation lasts 2s and repeats infinitely */
+}
+
+/* Keyframes define stages of animation */
+@keyframes pulse {
+  0%   { transform: scale(1); background: tomato; }
+  50%  { transform: scale(1.2); background: orange; }
+  100% { transform: scale(1); background: tomato; }
+}
+
+/* ================= Part 3: Animate with JS ================= */
+
+/* Default state of box (before animation) */
+.js-animate-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: purple;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Animated state (applied by JS class toggle) */
+.js-animate-box.animate {
+  transform: rotate(360deg) scale(1.5); /* spin + enlarge */
+  opacity: 0.5; /* fade slightly */
+}
